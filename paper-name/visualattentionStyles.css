@@ -1,0 +1,655 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    height: auto;
+    width: 100%;
+
+    /* margin-top: 2em; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.full {
+    height: 100vh;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+b {
+    font-weight: 600;
+    /* Add space between letters */
+    /* letter-spacing: 1px; */
+    /* Underline */
+    text-decoration: underline;
+
+    /* Increase space between word and underline */
+    text-underline-offset: 0.2em;
+}
+
+strong {
+    font-family: Roboto;
+}
+
+
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+
+#bottom {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 0.5em;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding-bottom: 1.5em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    color: grey;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 0.7em;
+    letter-spacing: 0.5px;
+    background: var(--navy);
+
+    transition: 0.2s;
+}
+
+#bottom a {
+    color: grey;
+    text-decoration: none;
+}
+
+#bottom a:hover {
+    opacity: 0.8;
+}
+
+
+#disclaimer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.1em;
+    line-height: 1.6em;
+    /* width: 100%; */
+    height: auto;
+    max-width: 50%;
+    
+    overflow-y: hidden;
+
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 3em;
+
+    animation: fadeIn 1s ease-in-out;
+}
+
+#disclaimer a {
+    /* width: auto; */
+}
+
+.buttonarea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+#disclaimertext,
+#terms,
+#agreeterms {
+    color: var(--white);
+    transition: 0.2s;
+}
+
+#terms {
+    margin-bottom: 0;
+}
+
+#agreeterms {
+    margin-top: 2em;
+    width: 100%;
+}
+
+.bottom {
+    margin-bottom: 4em;
+}
+
+li {
+    color: var(--white);
+    transition: 0.2s;
+    margin-bottom: 0.5em;
+}
+
+
+ol {
+    /* width: 45%; */
+    font-size: 1em;
+    margin-left: 3em;
+    margin-top: 0;
+}
+
+#agree {
+    display: inline-block;
+    width: 24px;
+    /* Set the desired width */
+    height: 24px;
+    /* Set the desired height */
+    background-color: #e0e0e0;
+    /* Background color for the checkbox */
+    border: 1px solid #ccc;
+    /* Border for the checkbox */
+    border-radius: 4px;
+    /* Rounded corners */
+    margin-right: 5px;
+    /* Add some spacing between the checkbox and label */
+    vertical-align: middle;
+    /* Center vertically with the label */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+}
+
+/* Style the custom checkbox when checked */
+#agree:checked {
+    background-color: #ffffff !important;
+    /* Change the background color when checked */
+    border: 1px solid #3498db;
+    /* Change the border color when checked */
+    color: #fff;
+    /* Change the color of the checkmark when checked */
+}
+
+#disclaimertext a,
+#terms a,
+#agreeterms a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+#disclaimertext a:hover,
+#terms a:hover,
+#agreeterms a:hover {
+    color: var(--linkhover);
+}
+
+/* fadein animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeInWithPause {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeInWithPauseStart {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+
+#dogame {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#start,
+#back,
+#formsubmit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 3em;
+    margin: 3em;
+    background-color: var(--navy);
+    border: 2px solid var(--white);
+    border-bottom-color: var(--white);
+    border-radius: 2px;
+    pointer-events: 'none';
+    /* opacity: 0.3; */
+    font-size: 0.9em;
+
+    animation: fadeInWithPauseStart 2s ease-in-out;
+}
+
+#back {
+    opacity: 1;
+    animation: fadeInWithPause 2s ease-in-out;
+    margin-top: 0em;
+}
+
+#back a {
+    color: var(--white);
+}
+
+#starttext, #submittext {
+    font-family: Roboto;
+    letter-spacing: 2px;
+    font-weight: bold;
+    line-height: 0;
+    text-align: center;
+    pointer-events: 'none';
+    color: var(--white);
+
+    transform: translateY(1px);
+
+    transition: 0.2s;
+}
+
+#dot {
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: red;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#hovertext {
+    position: absolute;
+    width: 80%;
+    font-size: 1.2em;
+    text-align: center;
+    top: 60%;
+    transform: translateY(-50%);
+    color: var(--white);
+
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#thankyou {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    animation: fadeIn 1s ease-in-out;
+}
+
+#thankyoutext {
+    font-size: 1.2em;
+    width: 50%;
+    color: var(--white);
+    text-align: center;
+}
+
+#didyouknow {
+    color: var(--white);
+    margin-top: 2em;
+}
+
+#randomfact {
+    width: 50%;
+    color: var(--white);
+    text-align: center;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+#nextimage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    margin: 5em;
+    margin-bottom: 1em;
+    background-color: var(--navy);
+    border: 2px solid var(--white);
+    border-bottom-color: var(--white);
+    border-radius: 2px;
+    pointer-events: 'none';
+
+    display: none;
+    animation: fadeInWithPause 2s ease-in-out;
+}
+
+#nextimagetext {
+    font-family: Roboto;
+    letter-spacing: 2px;
+    font-weight: bold;
+    line-height: 0;
+    text-align: center;
+    pointer-events: 'none';
+
+    transform: translateY(1px);
+
+    transition: 0.2s;
+}
+
+#imagefraction {
+    font-family: Roboto;
+    letter-spacing: 2px;
+    font-weight: bold;
+    line-height: 0;
+    text-align: center;
+    pointer-events: 'none';
+    color: grey;
+    font-size: 0.8em;
+
+    animation: fadeInWithPause 3s ease-in-out;
+}
+
+#imgcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--navy);
+    z-index: 9998;
+
+    display: none;
+}
+
+#mainimage {
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    z-index: 9999;
+}
+
+#maintitle {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#myRange {
+    height: 3em;
+    opacity: 0;
+    width: 100%;
+    margin: 0;
+    transform: translateY(-15px);
+}
+
+#slider {
+    position: relative;
+    width: 400px; /* Adjust the width as needed */
+    max-width: 80%;
+    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+    /* Offset up slightly */
+}
+
+#dot-container {
+    display: flex;
+    justify-content: space-between; /* Distributes dots evenly with space between them */
+    align-items: center; /* Centers the dots vertically within the container */
+    position: relative; /* Ensure it is positioned relative to its normal flow */
+    top: 10px; /* Adjust as needed */
+    width: 100%;
+    gap: 20px; /* Adjust this value to increase or decrease space between dots */
+}
+
+.dot {
+    width: 0.8em;
+    height: 0.8em;
+    background-color: var(--white);
+    border-radius: 50%;
+    /* position: absolute; */
+    transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.dot.active {
+    background-color: var(--white);
+    opacity: 1; /* Fully opaque when active */
+    transform: scale(1); /* Scale to normal size */
+}
+
+.dot.inactive {
+    opacity: 0.2; /* Invisible when not active */
+    transform: scale(0.7); /* Slightly smaller for fade effect */
+}
+
+#saliencydef {
+    color: grey;
+}
+
+big {
+    margin-top: 4em;
+}
+
+#ictlogo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 2em;
+}
+
+#ictlogo img {
+    width: 20em;
+}
+
+#ictlogomobile {
+    display: none;
+}
+
+small {
+    color: grey;
+    font-size: 0.8em;
+    margin-top: 2em;
+}
+
+#infosubmission {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    animation: fadeIn 1s ease-in-out;
+}
+
+#infoform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10em;
+    height: 100vh;
+}
+
+#infoform span {
+    width: 100%;
+}
+
+#infoform label {
+    color: var(--white);
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+#infoform input {
+    height: 2em;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--navy);
+    font-family: Roboto;
+    font-size: 1em;
+    text-align: left;
+    border: 1px solid var(--dim);
+    padding: 0.4em;
+    line-height: 1.5em;
+
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
+}
+
+#infoform select {
+    height: 2em;
+    width: 100%;
+    /* color: var(--white); */
+    color: gray;
+    background-color: var(--navy);
+    font-family: Roboto;
+    font-size: 1em;
+    text-align: left;
+    border: none;
+    border: 1px solid var(--dim);
+    padding: 0.4em;
+    line-height: 1.5em;
+
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
+}
+
+option {
+    color: var(--white);
+}
+
+
+/* Mobile devices */
+@media screen and (max-aspect-ratio: 1/1) {
+    #disclaimertext,
+    #terms {
+        width: 80%;
+        color: var(--white);
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
+
+    #disclaimer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        line-height: 1.6em;
+        max-width: 100%;
+        /* margin-top: 5vh; */
+        /* margin-bottom: 11vh; */
+
+        overflow-y: auto;
+
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    #thankyoutext {
+        width: 80%;
+        color: var(--white);
+    }
+
+    #bottom {
+        font-size: 0.7em;
+        letter-spacing: 1px;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
+    #start {
+        margin-top: 2em;
+    }
+
+    ol {
+        /* width: 50%; */
+        padding-left: 0;
+        font-size: 0.8em;
+    }
+
+    #back {
+        font-size: 0.7em;
+        margin-top: 1em;
+        margin-bottom: 4em;
+    }
+
+    #ictlogo {
+        display: none;
+    }
+
+    #ictlogo img {
+        width: 20em;
+    }
+
+    #ictlogomobile {
+        display: block;
+        width: 85%;
+        margin-bottom: 2em;
+    }
+
+    #ictlogomobile img {
+        width: 15em;
+        left: 0;
+    }
+
+    .bottom {
+        margin-bottom: 2em;
+    }
+}

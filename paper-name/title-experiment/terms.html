@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../../script.js"></script>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EW58LBHFJP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-EW58LBHFJP');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/portfolioStyles.css">
+    <link rel="stylesheet" href="../visualattentionStyles.css">
+    <!-- <link rel="stylesheet" href="./motivationStyles.css"> -->
+    <link id="icon" rel="icon" href="" types="image/icon type">
+
+    <title>
+        Terms • Title Experiment
+    </title>
+
+    <style>
+        html {
+            /* Prevent horizontal scrolling */
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="bottom">
+        <a href="#" target="_blank">yourwebsite.com</a>&nbsp•&nbsp<a id="homelink"
+            href="../">experiment</a></a>&nbsp•&nbsp<a id="homelink"
+            href="./motivation">motivation</a></a>&nbsp•&nbsp<a id="homelink"
+            href="./terms">terms</a>
+        
+            <a id="ictlogo" href="http://um.edu.mt/ict/ai" target="_blank"><img src="../ictlogo.png"></a>
+        </p>
+
+    <div id="imgcontainer">
+        <img id="mainimage" src="" alt="">
+    </div>
+
+    <div id="disclaimer">
+        <p id="disclaimertext">
+            <big><strong>Terms & Conditions</strong></big>
+
+            <br><br>
+            
+            You must be {age} years or older to participate in this experiment.
+
+            <br><br>
+
+            This site uses strictly necessary cookies to track your progress and prevent duplicate entries to ensure
+            integrity of the data collected.
+
+            <br><br>
+
+            By participating in this experiment, you consent to the collection of the following data:
+            <br>
+        </p>
+
+        <ol id="terms">
+            <li>Your age and gender (for correlation purposes).</li>
+            <li>The value you indicate using the <b>slider</b> whenever an article is shown.</li>
+        </ol>
+
+        <small><sup>*</sup>A "Rather not say" option is provided.</small>
+
+        <p id="disclaimertext">
+            No identifying data will be collected and you will be kept anonymous. Due to the maintenance of your anonymity,
+            data withdrawal after participation is not possible as individual
+            contributions cannot be identified.
+
+            <br><br>
+
+            If you have any questions or concerns, please <a href="mailto:test@example.com"
+                target="_blank">contact me</a>.
+
+            <br><br>
+        </p>
+
+        <a id="ictlogomobile" href="http://um.edu.mt/ict/ai" target="_blank"><img src="../ictlogo.png"></a>
+
+        <div class="buttonarea">
+            <button id="back"><a href="../">
+                    <p id="starttext">BACK TO EXPERIMENT</p>
+                </a>
+            </button>
+        </div>
+    </div>
+</body>
+
+<script>
+    // Create button
+    let start = document.getElementById("back");
+    let text = document.getElementById("disclaimertext");
+    let startText = document.getElementById("starttext");
+
+
+    // On button hover, change the background color fade into white
+    start.addEventListener('mouseenter', () => {
+        start.style.backgroundColor = "#181818";
+        startText.style.color = "#dfdfdf";
+    });
+
+    // On button hover, change the background color fade into white
+    start.addEventListener('mouseleave', () => {
+        start.style.backgroundColor = "#dfdfdf";
+        startText.style.color = "#181818";
+    });
+
+    let terms = document.getElementById("terms");
+</script>

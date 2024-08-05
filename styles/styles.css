@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --white: #181818;
+    --whitedim: #212121;
+    --dim: #5b5b61;
+    --dimselect: #707076;
+    --navy: #dfdfdf;
+    --lightnavy: #d6d6d6;
+    --border: #3b3b3b;
+    --link: #5278ad;
+    --linkhover: #3c5e99;
+}
+
+
+/* Handle */
+::-webkit-scrollbar {
+    background: var(--navy);
+    z-index: 4;
+    width: 0.5em;
+    transition: 0.4s;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 2px;
+    border-radius: 10px;
+    background: var(--border);
+    transition: 0.4s;
+}
+
+/* @font-face {
+    font-family: Lato;
+    src: local('fonts/LATO-REGULAR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: local('fonts/UBUNTU-REGULAR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: Ubuntu Mono;
+    src: local('fonts/UBUNTUMONO-REGULAR.TTF') format('truetype');
+} */
+
+hr {
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 1px solid var(--border);
+}
+
+html {
+    background: var(--navy);
+}
+
+body {
+    overflow-y: scroll;
+
+    padding-top: 10vh;
+
+    margin: 0;
+    /* max-width: 1200px; */
+    background: var(--navy);
+
+    font-size: 18px;
+    font-family: Roboto;
+    letter-spacing: -0.5px;
+
+    min-height: calc(100vh - 10vh);
+}
+
+main {
+    background: var(--navy);
+
+    overflow-x: hidden;
+
+    max-width: 1200px;
+    margin: auto auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 5em;
+
+    color: var(--white);
+    letter-spacing: -0.5px;
+
+    /* min-height: calc(100vh - 15vh); */
+
+    /* animation: fadeInAnimation ease 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+
+    transition: 0.4s;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+main a {
+    font-weight: 400;
+    color: var(--link);
+}
+
+main a:hover {
+    color: var(--linkhover);
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0.5em;
+    font-family: Roboto;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 18px;
+    margin: 0.2em;
+    line-height: 1.5em;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-family: Roboto;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    /* padding-top: 4%;
+    padding-bottom: 2%; */
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+
+    transition: .4s;
+}
+
+.section {
+    margin-bottom: 2em;
+}
+
+.row {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    h3 {
+        padding-top: 5vh;
+    }
+
+    #landing {
+        width: 80%;
+        left: 10%;
+        right: 10%;
+
+        height: 20%;
+        top: 40%;
+        bottom: 40%;
+    }
+}

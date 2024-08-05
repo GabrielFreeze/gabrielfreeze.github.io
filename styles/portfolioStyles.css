@@ -1,0 +1,196 @@
+main {
+    width: 50%;
+    text-align: center;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: var(--lightnavy);
+    color: var(--white);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    text-align: left;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: var(--border);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lightnavy);
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-family: Roboto;
+    text-align: left;
+    font-size: 15px;
+}
+
+.panel img {
+    width: 1em;
+    height: 1em;
+    padding-right: 0.5em;
+}
+
+.left {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    
+    transition: 0.3s;
+}
+
+.left p {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1em;
+    line-height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+/* .left p a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+} */
+
+
+#sintesi, #sintesi a {
+    color: #ffc90a;
+}
+
+
+#ikla, #ikla a {
+    color: #dddddd;
+}
+
+
+#gpgkey {
+    text-align: center;
+    width: auto;
+    min-width: 50%;
+    min-height: 40vh;
+    color: var(--white);
+    background-color: var(--lightnavy);
+    border: none;
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    padding: 1em;
+    border: 1px solid var(--border);
+}
+
+#gpgkey:hover {
+    color: var(--whitedim);
+}
+
+#gpgkey::-webkit-scrollbar {
+    width: 0;
+}
+
+#gpgkey:focus,
+input:focus {
+    outline: none;
+}
+
+button {
+    background-color: var(--lightnavy);
+    color: var(--white);
+    font-family: Lato;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+button:hover {
+    background-color: var(--border);
+}
+
+button img {
+    width: 2em;
+    padding-right: 0.75em;
+}
+
+.tool {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#collapse {
+    font-weight: 600;
+    font-family: Lato;
+    margin: 0;
+    border: none;
+}
+
+main {
+    padding-bottom: 5vh;
+}
+
+h5 {
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 1em;
+    text-align: left;
+    letter-spacing: 2px;
+    margin-top: 1em;
+    padding-top: 0;
+}
+
+.container {
+    border-left: 1px solid var(--border);
+    padding-left: 1em;
+    margin-left: 1em;
+    margin-bottom: 2em;
+}
+
+.publinkcontainer {
+    width: 100%;
+    margin-top: 0.3em;
+    font-size: 1em;
+    letter-spacing: 0;
+}
+
+.publink {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+}
+
+.publinkleft {
+    margin-left: 0;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    main {
+        width: 90%;
+    }
+}
