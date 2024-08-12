@@ -1,4 +1,4 @@
-#saliencycontainer {
+#example-img-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -11,7 +11,7 @@
     color: var(--white);
 }
 
-#saliencycontainer div {
+#example-img-container div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,9 +20,9 @@
     height: auto;
 }
 
-.saliencyexample {
+.example-img {
     height: 100%;
-    width: 50%;
+    width: 70%;
 
     /* Shadow */
     box-shadow: 0 0 15px 10px rgba(15, 15, 15, 0.5);
@@ -40,6 +40,11 @@ small {
 
 sup {
     color: grey;
+}
+
+html {
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 
@@ -75,7 +80,7 @@ sup {
         letter-spacing: 1px;
     } */
 
-    #saliencycontainer {
+    #example-img-container {
         width: 80%;
         /* Start vertically at top */
         flex-direction: row;
@@ -88,7 +93,7 @@ sup {
     }
 
 
-    #saliencycontainer div {
+    #example-img-container div {
         display: flex;
         flex-direction: column;
         justify-content: center;
