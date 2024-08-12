@@ -183,8 +183,8 @@
                     });
 
                     const fileName = 'info' + (thisPID) + '.json';
-                    const pidRef = ref(storage, 'pids/' + (thisPID) + '/');
-                    const fileRef = ref(pidRef, fileName);
+                    const pidRef   = ref(storage, 'pids/' + (thisPID) + '/');
+                    const fileRef  = ref(pidRef, fileName);
 
                     uploadBytes(fileRef, file)
                         .then(() => {
@@ -257,25 +257,21 @@
         return null; // Return null if the order cookie is not found
     }
 
-    let disclaimer = document.getElementById("disclaimer");
-    let dogame = document.getElementById("dogame");
-    let thankyou = document.getElementById("thankyou");
-
-    let originalHoverText = document.getElementById("hovertext").innerHTML;
-
-    let game = document.getElementById("game");
-    let cross = document.getElementById("cross");
-    let trail = document.getElementById('trail');
-
-    let bottom = document.getElementById("bottom");
-
+    let numDots      = 10;
+    let game         = document.getElementById("game");
+    let cross        = document.getElementById("cross");
+    let trail        = document.getElementById('trail');
+    let bottom       = document.getElementById("bottom");
+    let dogame       = document.getElementById("dogame");
+    let slider       = document.getElementById("slider");
+    let myRange      = document.getElementById("myRange");
+    let thankyou     = document.getElementById("thankyou");
+    let disclaimer   = document.getElementById("disclaimer");
+    let img          = document.getElementById("mainimage");
+    let title        = document.getElementById("maintitle");
     let imgcontainer = document.getElementById("imgcontainer");
-    let img = document.getElementById("mainimage");
-    let title = document.getElementById("maintitle");
-    let slider = document.getElementById("slider");
-    let myRange = document.getElementById("myRange");
     let dotContainer = document.getElementById("dot-container");
-    let numDots = 10;
+    let originalHoverText = document.getElementById("hovertext").innerHTML;
 
 
     // Create and position 10 dots
@@ -880,12 +876,10 @@
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
-            console.log(data.ip)
             ip_address = data.ip
         })
         .catch(error => {
-            console.log("a[pskdoaskopd]")
-            console.log(error)
+            console.log("[ERROR] Cannot retrieve IP")
             ip_address = ""
     });
 
