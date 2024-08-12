@@ -154,7 +154,7 @@
     let pid;
     let order;
 
-    async function generatePID(age, gender) {
+    async function generatePID(age, gender,ip_address) {
         return new Promise((resolve, reject) => {
             const storageRef = ref(storage, 'pids/');
             let maxPID = 0;
@@ -536,7 +536,7 @@
             try {
                 // Generate a new PID and wait for the function to return before continuing
                 setRandomisation(imageCount);
-                const newPID = await generatePID(age, gender);
+                const newPID = await generatePID(age, gender,ip_address);
                 console.log("PID:" + newPID);
                 setPID(newPID);
                 setProgress(imageCount);
@@ -880,7 +880,7 @@
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
-            console.log("!!!!!!!!!!!!!!!!!!!!")
+            console.log(data.ip)
             ip_address = data.ip
         })
         .catch(error => {
