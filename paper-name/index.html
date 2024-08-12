@@ -171,20 +171,6 @@
 
                     const thisPID = maxPID + 1;
                     // console.log("MAX PID: " + maxPID);
-                    
-                    
-                    //Store ip address of client
-                    let ip_address = ""
-                    fetch('https://api.ipify.org?format=json')
-                        .then(response => response.json())
-                        .then(data => {
-                            ip_address = data.ip
-                        })
-                        .catch(error => {
-                            console.log(error)
-                            ip_address = ""
-                    });
-
 
                     const data = {
                         age: age,
@@ -378,6 +364,7 @@
 
     let age;
     let gender;
+    let ip_address;
 
     let formsubmit = document.getElementById("formsubmit");
     let submittext = document.getElementById("submittext");
@@ -888,6 +875,17 @@
         .then(text => {
             facts = text.split('\n');
         });
+    
+    //Store ip address of client
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            ip_address = data.ip
+        })
+        .catch(error => {
+            console.log(error)
+            ip_address = ""
+    });
 
     doDisclaimer();
 
