@@ -880,9 +880,11 @@
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
+            console.log("!!!!!!!!!!!!!!!!!!!!")
             ip_address = data.ip
         })
         .catch(error => {
+            console.log("a[pskdoaskopd]")
             console.log(error)
             ip_address = ""
     });
