@@ -68,21 +68,12 @@
         </div>
 
         <div id="disclaimer" style="text-align:center;">
-            <p id="disclaimertext">This is an experiment to <b>{add reason}</b>
-
+            <p id="disclaimertext">This is experiment is about image-text similarity in news articles.
                 <br><br>
-
-                <!-- <hr style="width: 50%; margin: auto;"> -->
-
-                You will be shown a
-                random news article.
-
+                You will be shown the thumbnail and headline of a news article.
                 <br><br>
-
-                Your task is to {add task} using a slider.
-
+                Your task is to rate how <b>representative</b> the image is to the headline.
                 <br><br>
-
                 The value you indicate on the slider will be recorded.
             </p>
             <p id="agreeterms">
@@ -180,10 +171,24 @@
 
                     const thisPID = maxPID + 1;
                     // console.log("MAX PID: " + maxPID);
+                    
+                    
+                    //Store ip address of client
+                    let ip_address = ""
+                    fetch('https://api.ipify.org?format=json')
+                        .then(response => response.json())
+                        .then(data => {
+                            ip_address = data.ip
+                        })
+                        .catch(error => {
+                            ip_address = ""
+                    });
+
 
                     const data = {
                         age: age,
                         gender: gender,
+                        ip: ip_address,
                     };
 
                     const file = new Blob([JSON.stringify(data, null, 2)], {
