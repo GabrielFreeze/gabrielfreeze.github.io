@@ -4,5 +4,5 @@ Times of Malta was founded in 1935 by Lord Gerald Strickland.
 The Journal de Malte was Malta's first newspaper, and it was published in 1798 in French and Italian.
 Broadsheet newspapers are large-format papers, while tabloids are smaller and often associated with sensational news.
 The masthead on the front page of a newspaper displays its name, date, and other key information.
-The first AI tool to be used by a newspaper is the New York Times' (NYT) \textit{Editor} tool in 2015, which could automatically assign tags to articles.
+The first AI tool to be used by a newspaper is the New York Times' (NYT) Editor tool in 2015, which could automatically assign tags to articles.
 Personalised News Feeds are prone to echo-chambers and algorithmic bias.
