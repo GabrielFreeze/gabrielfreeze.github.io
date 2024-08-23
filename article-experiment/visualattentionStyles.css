@@ -507,6 +507,23 @@ big {
     display: none;
 }
 
+#mcstlogo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 2em;
+}
+
+#mcstlogo img {
+    width: 20em;
+}
+
+#mcstlogomobile {
+    display: none;
+}
+
+
+
 small {
     color: grey;
     font-size: 0.8em;
