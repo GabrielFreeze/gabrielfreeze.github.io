@@ -47,7 +47,8 @@
         <a id="homelink"
             href="./">experiment</a></a>&nbsp•&nbsp<a id="homelink"
             href="./about/motivation">motivation</a></a>&nbsp•&nbsp<a id="homelink"
-            href="./about/terms">terms</a>
+            href="./about/terms">terms</a>&nbsp•&nbsp<a id="homelink"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScc99LZatY1LNPVE39fgy27ZGm_tKGOtn1TCeV8HdmB_TH6Aw/viewform">Participate in future experiments!</a>
         <a id="ictlogo" href="http://um.edu.mt/ict/ai" target="_blank"><img src="./ictlogo.png"></a>
     </p>
 
@@ -104,6 +105,7 @@
                     <input type="number" id="age" name="age" min="12" max="100" placeholder="Age" required>
                 </span>
                 <br>
+
                 <span>
                     <!-- <label for="gender">Gender:</label> -->
                     <select id="gender" name="gender" required>
@@ -114,6 +116,14 @@
                         <option value="RatherNotSay">Rather not say</option>
                     </select>
                 </span>
+                <!-- Uncomment to enable email input field in demographic screen -->
+                <!-- <br>
+                <br>
+                <br>
+                <span>
+                    <label id="email-text" for="email"><br><br>Participate in future experiments! (optional)</label>
+                    <input id="email" type="email" placeholder="Your email address">
+                </span> -->
 
                 <div class="buttonarea">
                     <button id="formsubmit">
@@ -159,7 +169,7 @@
     let pid;
     let order;
 
-    async function generatePID(age, gender,ip_address) {
+    async function generatePID(age, gender,ip_address, email_adress) {
         return new Promise((resolve, reject) => {
             const storageRef = ref(storage, 'pids/');
             let maxPID = 0;
@@ -181,6 +191,7 @@
                         age: age,
                         gender: gender,
                         ip: ip_address,
+                        email: email_address
                     };
 
                     const file = new Blob([JSON.stringify(data, null, 2)], {
@@ -366,6 +377,7 @@
     let age;
     let gender;
     let ip_address;
+    let email_address;
 
     let formsubmit = document.getElementById("formsubmit");
     let submittext = document.getElementById("submittext");
@@ -473,6 +485,8 @@
     function handleChange() {
         age = document.getElementById("age").value;
         gender = document.getElementById("gender").value;
+        email_address = document.getElementById("email").value;
+
         if (age != "" && age >= 12 && age <= 100 && gender != "") {
             formsubmit.style.pointerEvents = 'auto';
             formsubmit.style.opacity = '1';
@@ -537,7 +551,7 @@
             try {
                 // Generate a new PID and wait for the function to return before continuing
                 setRandomisation(imageCount);
-                const newPID = await generatePID(age, gender,ip_address);
+                const newPID = await generatePID(age, gender, ip_address,email_address);
                 console.log("PID:" + newPID);
                 setPID(newPID);
                 setProgress(imageCount);

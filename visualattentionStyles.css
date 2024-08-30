@@ -108,6 +108,12 @@ strong {
     /* width: auto; */
 }
 
+#email-text {
+    font-size: 0.8em !important;
+    color: gray !important;
+}
+
+
 .buttonarea {
     width: 100%;
     display: flex;

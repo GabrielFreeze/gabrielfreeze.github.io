@@ -6,3 +6,5 @@ Broadsheet newspapers are large-format papers, while tabloids are smaller and of
 The masthead on the front page of a newspaper displays its name, date, and other key information.
 The first AI tool to be used by a newspaper is the New York Times' (NYT) Editor tool in 2015, which could automatically assign tags to articles.
 Personalised News Feeds are prone to echo-chambers and algorithmic bias.
+Large Language Models (LLMs) can understand and process large amounts of texts.
+ChatGPT is powered by clusters of powerful GPUs.
