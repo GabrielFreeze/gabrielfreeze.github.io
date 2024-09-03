@@ -71,7 +71,7 @@
                 </div>
                 <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
             </div>
-            <small id="taskreminder">Rate the correlation between the text and the image.</small>
+            <small id="taskreminder">Low correlation is when the image and headline are unrelated.<br>High correlation is when the image and headline are highly related.</small>
         </div>
 
         <div id="disclaimer" style="text-align:center;">
@@ -80,7 +80,8 @@
                 You will be shown the thumbnail and headline of a news article.
                 Your task is to rate the correlation between the text and the image.
                 <br>
-                The value you indicate on the slider will be recorded.
+                The value you indicate on the slider will be recorded.<br>
+                <small>If on mobile, tap and hold on the slider.</small>
             </p>
             <p id="agreeterms">
                 <!-- Checkbox -->
@@ -474,7 +475,7 @@
     function handleChange() {
         age = document.getElementById("age").value;
         gender = document.getElementById("gender").value;
-        if (age != "" && age >= 12 && age <= 100 && gender != "") {
+        if (age != "" && age >= 16 && age <= 100 && gender != "") {
             formsubmit.style.pointerEvents = 'auto';
             formsubmit.style.opacity = '1';
         } else {
