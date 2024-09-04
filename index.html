@@ -59,6 +59,7 @@
         <div id="trail"></div>
 
         <div id="imgcontainer">
+            <!-- TODO: I need to use javascript to alternate the order of the below two elements. -->
             <img id="mainimage" src="" alt="">
             <h1 id="maintitle" src="" alt=""></h1>
             <!-- Slider -->
@@ -315,10 +316,16 @@
         });
     }
 
-    // Update dots based on slider input
-    // myRange.addEventListener('input', function() {
-    //     updateDots(this.value);
-    // });
+    // FOR MOBILE: Update dots based on slider input
+    // TODO: I need to update this method to handle mobile input
+    myRange.addEventListener('input', function() {
+        updateDots(this.value);
+        console.log('!!!!!!')
+
+    });
+
+    //TODO: This is a lot of extra logic just to account for continours input between the dots.
+    // Consider opting for the top one only, which is also mobile responsive.
 
     // Handle mouse movement for precise dot activation
     myRange.addEventListener('mousemove', function(e) {
@@ -398,6 +405,7 @@
         }
     });
 
+    //TODO: This function is not being called when the slider is tapped on mobile
     function handleSlider(event) {
         event.preventDefault();
 
