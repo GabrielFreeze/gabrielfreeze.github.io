@@ -42,6 +42,7 @@
 </head>
 
 <body class="full">
+    
     <p id="bottom">
         <!-- <a href="#" target="_blank">yourwebsite.com</a>&nbsp•&nbsp -->
         <a id="homelink"
@@ -51,7 +52,7 @@
             href="https://docs.google.com/forms/d/e/1FAIpQLScc99LZatY1LNPVE39fgy27ZGm_tKGOtn1TCeV8HdmB_TH6Aw/viewform">Participate in future experiments!</a>
         <a id="ictlogo" href="http://um.edu.mt/ict/ai" target="_blank"><img src="./ictlogo.png"></a>
     </p>
-
+    
     <div id="game">
 
         <div id="cross"></div>
@@ -74,8 +75,9 @@
             <small id="taskreminder">Low correlation is when the image and headline are unrelated.<br>High correlation is when the image and headline are highly related.</small>
         </div>
 
+        <a id="ictlogomobile" href="http://um.edu.mt/ict/ai" target="_blank"><img src="./ictlogo.png"></a>
         <div id="disclaimer" style="text-align:center;">
-            <p id="disclaimertext">This is experiment is about image-text similarity in news articles.
+            <p id="disclaimertext">This experiment is about image-text similarity in news articles.
                 <br><br>
                 You will be shown the thumbnail and headline of a news article.
                 Your task is to rate the correlation between the text and the image.
@@ -264,22 +266,22 @@
         return null; // Return null if the order cookie is not found
     }
 
-    let numDots      = 10;
-    let game         = document.getElementById("game");
-    let cross        = document.getElementById("cross");
-    let trail        = document.getElementById('trail');
-    let bottom       = document.getElementById("bottom");
-    let dogame       = document.getElementById("dogame");
-    let slider       = document.getElementById("slider");
-    let myRange      = document.getElementById("myRange");
-    let thankyou     = document.getElementById("thankyou");
-    let disclaimer   = document.getElementById("disclaimer");
-    let img          = document.getElementById("mainimage");
-    let title        = document.getElementById("maintitle");
-    let imgcontainer = document.getElementById("imgcontainer");
-    let dotContainer = document.getElementById("dot-container");
+    let numDots       = 10;
+    let game          = document.getElementById("game");
+    let cross         = document.getElementById("cross");
+    let trail         = document.getElementById('trail');
+    let bottom        = document.getElementById("bottom");
+    let dogame        = document.getElementById("dogame");
+    let slider        = document.getElementById("slider");
+    let myRange       = document.getElementById("myRange");
+    let thankyou      = document.getElementById("thankyou");
+    let disclaimer    = document.getElementById("disclaimer");
+    let img           = document.getElementById("mainimage");
+    let title         = document.getElementById("maintitle");
+    let imgcontainer  = document.getElementById("imgcontainer");
+    let dotContainer  = document.getElementById("dot-container");    
+    let ictLogoMobile = document.getElementById("ictlogomobile");    
     let originalHoverText = document.getElementById("hovertext").innerHTML;
-
 
     // Create and position 10 dots
     for (let i = 0; i < numDots; i++) {
@@ -573,6 +575,7 @@
         disclaimer.style.display = "none";
         dogame.style.display = "flex";
         trail.style.display = "none";
+        ictLogoMobile.style.display= "none";
 
         thankyou.style.display = "none";
 

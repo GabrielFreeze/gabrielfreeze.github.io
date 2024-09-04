@@ -45,11 +45,12 @@
     <p id="bottom">
         <!-- <a href="#" target="_blank">yourwebsite.com</a>&nbsp•&nbsp -->
         <a id="homelink"
-            href="../">experiment</a></a>&nbsp•&nbsp<a id="homelink"
+            href="../../">experiment</a></a>&nbsp•&nbsp<a id="homelink"
             href="../motivation">motivation</a></a>&nbsp•&nbsp<a id="homelink"
             href="#">terms</a>&nbsp•&nbsp<a id="homelink" target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLScc99LZatY1LNPVE39fgy27ZGm_tKGOtn1TCeV8HdmB_TH6Aw/viewform">Participate in future experiments!</a>
         
+            <a id="mcstlogo" href="https://xjenzamalta.mt/" target="_blank"> <img src="../../mcst_logo.png"></a>
             <a id="ictlogo" href="http://um.edu.mt/ict/ai" target="_blank"><img src="../../ictlogo.png"></a>
         </p>
 
@@ -88,20 +89,19 @@
 
             <br><br>
 
-            If you have any questions or concerns, please <a href="mailto:gabriel.hili@um.edu.mt"
-                target="_blank">contact me</a>.
+            If you have any questions or concerns, please <a href="mailto:gabriel.hili@um.edu.mt" target="_blank">contact me</a>.
 
-            <br><br>
         </p>
 
-        <a id="ictlogomobile" href="http://um.edu.mt/ict/ai" target="_blank"><img src="../ictlogo.png"></a>
-
+        <a id="ictlogomobile" href="http://um.edu.mt/ict/ai" target="_blank"><img src="../../ictlogo.png"></a>
+        
         <div class="buttonarea">
             <button id="back"><a href="../../">
-                    <p id="starttext">BACK TO EXPERIMENT</p>
-                </a>
-            </button>
-        </div>
+                <p id="starttext">BACK TO EXPERIMENT</p>
+            </a>
+        </button>
+    </div>
+    
     </div>
 </body>
 
@@ -125,4 +125,25 @@
     });
 
     let terms = document.getElementById("terms");
+</script>
+
+<script>
+    if (window.innerWidth <= 1000) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY; // Current Y scroll position
+            const windowHeight = window.innerHeight; // Height of the viewport
+            const image = document.querySelector('#mcstlogo');
+            
+            // Calculate opacity: 
+            // - At the top (scrollPosition = 0), opacity should be 1
+            // - At a certain scroll position, opacity decreases
+            let opacity = 1 - (scrollPosition / windowHeight)*3;
+            
+            // Clamp opacity to be between 0 and 1
+            opacity = Math.max(0, Math.min(1, opacity));
+            
+            // Apply the opacity to the image
+            image.style.opacity = opacity;
+        });
+    }
 </script>
