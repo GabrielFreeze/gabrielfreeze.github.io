@@ -41,16 +41,17 @@
 
     <div id="disclaimer">
         <div id="disclaimertext">
+
             <big><strong>Motivation</strong></big>            
             <br><br>
             
             <div id="example-img-container">
-                <div style="float: left;">
+                <div >
                     <img class="example-img" src="../images/demo_1.jpg">
                     <p class="caption">Crowdsourced Ground Truth</p>
                 </div>
-                <strong>→</strong>
-                <div style="float: right;">
+                <strong id="images-arrow">→</strong>
+                <div >
                     <img class="example-img" src="../images/demo_2.jpg">
                     <p class="caption">AI Model Baseline Comparison</p>
                 </div>
@@ -114,6 +115,29 @@
         start.style.backgroundColor = "#dfdfdf";
         startText.style.color = "#181818";
     });
+</script>
+
+
+
+<script>
+    if (window.innerWidth <= 1000) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY; // Current Y scroll position
+            const windowHeight = window.innerHeight; // Height of the viewport
+            const image = document.querySelector('#mcstlogo');
+            
+            // Calculate opacity: 
+            // - At the top (scrollPosition = 0), opacity should be 1
+            // - At a certain scroll position, opacity decreases
+            let opacity = 1 - (scrollPosition / windowHeight)*3;
+            
+            // Clamp opacity to be between 0 and 1
+            opacity = Math.max(0, Math.min(1, opacity));
+            
+            // Apply the opacity to the image
+            image.style.opacity = opacity;
+        });
+    }
 </script>
 
 </html>

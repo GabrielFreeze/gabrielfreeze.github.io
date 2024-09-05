@@ -58,8 +58,8 @@
         <div id="trail"></div>
 
         <div id="imgcontainer">
-            <img id="mainimage" src="" alt="">
-            <h1 id="maintitle" src="" alt=""></h1>
+            <!-- <img id="mainimage" src="" alt="">
+            <h1 id="maintitle" src="" alt=""></h1> -->
             <!-- Slider -->
             <div id="slider">
                 <div class="marker-container">
@@ -81,7 +81,7 @@
                 Your task is to rate the correlation between the text and the image.
                 <br>
                 The value you indicate on the slider will be recorded.<br>
-                <small>If on mobile, tap and hold on the slider.</small>
+                <!-- <small>If on mobile, tap and hold on the slider.</small> -->
             </p>
             <p id="agreeterms">
                 <!-- Checkbox -->
@@ -274,11 +274,13 @@
     let myRange      = document.getElementById("myRange");
     let thankyou     = document.getElementById("thankyou");
     let disclaimer   = document.getElementById("disclaimer");
-    let img          = document.getElementById("mainimage");
-    let title        = document.getElementById("maintitle");
     let imgcontainer = document.getElementById("imgcontainer");
     let dotContainer = document.getElementById("dot-container");
     let originalHoverText = document.getElementById("hovertext").innerHTML;
+
+    //These will hold the image-title pair
+    let img;
+    let title;
 
 
     // Create and position 10 dots
@@ -301,7 +303,7 @@
             return;
         }
 
-        const index = Math.floor(value / (100 / (numDots - 1)));
+        const index = Math.round(value / (100 / (numDots - 1)));
         dots.forEach((dot, i) => {
             if (i <= index) {
                 dot.classList.remove('inactive');
@@ -313,17 +315,16 @@
         });
     }
 
-    // Update dots based on slider input
-    // myRange.addEventListener('input', function() {
-    //     updateDots(this.value);
-    // });
+    // MOBILE: Update dots based on slider input
+    myRange.addEventListener('input', function() {
+        updateDots(this.value);
+    });
 
     // Handle mouse movement for precise dot activation
     myRange.addEventListener('mousemove', function(e) {
         const rect = myRange.getBoundingClientRect();
         let offsetX = e.clientX - rect.left;
-        // Move offset to right to adjust for width of the dot, 0.4em
-        offsetX += 20;
+        
         const value = (offsetX / rect.width) * 100; // Calculate value based on mouse position
         myRange.value = Math.min(Math.max(value, 0), 100);
         updateDots(myRange.value);
@@ -404,6 +405,7 @@
         dots[dots.length - 1].style.transform = "scale(1.5)";
 
         myRange.removeEventListener('click', handleSlider);
+        // myRange.removeEventListener('touchstart', handleSlider);
 
         // Prevent all mouse events
         myRange.style.pointerEvents = 'none';
@@ -566,6 +568,7 @@
 
     // Function game
     function doGame() {
+
         myRange.style.pointerEvents = 'auto';
 
         console.log("doGame()")
@@ -580,9 +583,9 @@
 
         // Download image and cache
         imgNum = order[imageCount];
-        img.src = './images/' + (imgNum) + '.jpg';
-        img.style.display = "none";
-        imgcontainer.style.display = "none";
+        // img.src = './images/' + (imgNum) + '.jpg';
+        // img.style.display = "none";
+        // imgcontainer.style.display = "none";
 
         // console.log(img, img.src, document.getElementById("mainimage").src);
 
@@ -658,6 +661,25 @@
         // Function startGame
         function startGame() {
             updateDots(-1);
+            
+
+            //Remove title and image, if any
+            if (typeof img !== 'undefined')
+                img.remove()
+            if (typeof title !== 'undefined')
+                title.remove()
+            
+            //Create elements for image and headline
+            //Order alternates to not add additional bias    
+            img = document.createElement('img')
+            img.setAttribute('id', 'mainimage');
+            title = document.createElement('h1')  
+            title.setAttribute('id', 'maintitle');
+
+            let elements = [img,title]
+            for (let i = 0; i < elements.length; i++) {
+                imgcontainer.insertBefore(elements[(i+imageCount)%2], imgcontainer.firstChild);
+            }
 
 
             console.log("startGame()")
@@ -716,6 +738,7 @@
 
             myRange.style.cursor = "pointer";
             myRange.addEventListener('click', handleSlider);
+            myRange.addEventListener('input', handleSlider);
 
             
 
@@ -731,6 +754,7 @@
     // Function endGame
     function endGame(sliderPosition) {
         console.log("endGame()")
+
         // Save mousePositions and finalPosition in ./pids/<this_PID>/mousemovements/imgNum/mousemovements.json
         const data = {
             sliderPosition: sliderPosition
