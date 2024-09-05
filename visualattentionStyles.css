@@ -373,7 +373,7 @@ ol {
     font-family: Roboto;
     letter-spacing: 2px;
     font-weight: bold;
-    line-height: 0;
+    /* line-height: 0; */
     text-align: center;
     pointer-events: 'none';
 
@@ -402,7 +402,7 @@ ol {
     align-items: center;
     width: 100vw;
     height: 100vh;
-
+    margin-top:50px;
     background: var(--navy);
     z-index: 9998;
 
@@ -424,8 +424,8 @@ p.marker-text {
     max-height: 100%;
     max-width: 100%;
 
-    width:60%;
-    height:60%;
+    width:80%;
+    height:80%;
     z-index: 9999;
 }
 
@@ -608,6 +608,10 @@ option {
     color: var(--white);
 }
 
+#taskreminder {
+    margin-bottom: 30px;
+}
+
 
 /* Mobile devices */
 @media screen and (max-aspect-ratio: 1/1) {
@@ -632,6 +636,7 @@ option {
     #taskreminder {
         text-align: center;
         font-size: 10px;
+        margin-bottom: 30px;
     }
 
 
