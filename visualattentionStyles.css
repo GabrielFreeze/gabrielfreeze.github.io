@@ -421,8 +421,8 @@ p.marker-text {
 
 #mainimage {
     object-fit: contain;
-    max-height: 100%;
-    max-width: 100%;
+    min-height: 10vh;
+    /* max-width: 100%; */
 
     width:80%;
     height:80%;
