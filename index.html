@@ -405,7 +405,7 @@
         dots[dots.length - 1].style.transform = "scale(1.5)";
 
         myRange.removeEventListener('click', handleSlider);
-        // myRange.removeEventListener('touchstart', handleSlider);
+        myRange.removeEventListener('touchend', handleSlider);
 
         // Prevent all mouse events
         myRange.style.pointerEvents = 'none';
@@ -738,9 +738,7 @@
 
             myRange.style.cursor = "pointer";
             myRange.addEventListener('click', handleSlider);
-            myRange.addEventListener('input', handleSlider);
-
-            
+            myRange.addEventListener('touchend', handleSlider);
 
             let dots = document.querySelectorAll('.dot');
             dots.forEach((dot) => {
