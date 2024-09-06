@@ -610,6 +610,7 @@ option {
 
 #taskreminder {
     margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 
@@ -635,8 +636,8 @@ option {
 
     #taskreminder {
         text-align: center;
-        font-size: 10px;
-        margin-bottom: 30px;
+        font-size: 11px;
+        margin-bottom: 10vh;
     }
 
 
