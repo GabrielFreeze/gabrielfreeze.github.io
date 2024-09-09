@@ -422,7 +422,7 @@ p.marker-text {
 #mainimage {
     object-fit: contain;
     min-height: 10vh;
-    /* max-width: 100%; */
+    max-width: 100%;
 
     width:80%;
     height:80%;
@@ -439,11 +439,20 @@ p.marker-text {
 
 #myRange {
     height: 3em;
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     margin: 0;
     transform: translateY(-15px);
+
 }
+
+input[type="range"]::-webkit-slider-thumb {
+    /* -webkit-appearance: none; Remove default styling */
+    width: 30px; /* Thumb width */
+    height: 30px; /* Thumb height */
+    border-radius: 50%; /* Make thumb circular */
+  }
+
 
 #slider {
     position: relative;
@@ -612,6 +621,7 @@ option {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 30px;
+    z-index: 9999;
 }
 
 
@@ -715,8 +725,9 @@ option {
 
 }
 
+/* @media screen and (-webkit-touch-callout: none) {
 
-/* CSS for Apple mobile devices */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    
-}
+    #slider {
+        background-color: red;
+    }
+} */

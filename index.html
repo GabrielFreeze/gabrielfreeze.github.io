@@ -286,14 +286,28 @@
     let img;
     let title;
 
+    let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
+    if (!isSafari) {
+        myRange.style.opacity = 0;
+    } else {
+
+    }
 
     // Create and position 10 dots
     for (let i = 0; i < numDots; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot inactive';
         dot.style.left = `${(i * 100) / (numDots - 1)}%`; // Evenly position dots
+        
+
+        if (isSafari) {
+            dot.style.opacity = 0;
+        }
+
         dotContainer.appendChild(dot);
     }
+
 
     function updateDots(value) {
         const dots = document.querySelectorAll('.dot');
@@ -573,6 +587,11 @@
     // Function game
     function doGame() {
 
+        if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)){
+            myRange.value = 50;
+        }
+
+
         myRange.style.pointerEvents = 'auto';
 
         console.log("doGame()")
@@ -666,7 +685,6 @@
         function startGame() {
             updateDots(-1);
             
-
             //Remove title and image, if any
             if (typeof img !== 'undefined')
                 img.remove()
@@ -679,6 +697,13 @@
             img.setAttribute('id', 'mainimage');
             title = document.createElement('h1')  
             title.setAttribute('id', 'maintitle');
+            
+
+            if (isSafari) {
+                // img.style.backgroundColor = 'yellow';
+                img.style.height = 'auto';
+            }
+
 
             let elements = [img,title]
             for (let i = 0; i < elements.length; i++) {
