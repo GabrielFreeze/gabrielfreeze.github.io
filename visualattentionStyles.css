@@ -439,7 +439,7 @@ p.marker-text {
 
 #myRange {
     height: 3em;
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     margin: 0;
     transform: translateY(-15px);
@@ -713,4 +713,10 @@ option {
         left: 0;
     }
 
+}
+
+
+/* CSS for Apple mobile devices */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    
 }
