@@ -900,11 +900,12 @@
             facts = text.split('\n');
         });
     
-    //Store ip address of client
+    //Uncomment to enable ip_address storing
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
-            ip_address = data.ip
+            // ip_address = data.ip
+            ip_address = ""
         })
         .catch(error => {
             console.log("[ERROR] Cannot retrieve IP")
